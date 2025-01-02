@@ -2,10 +2,11 @@
 
 namespace App\Livewire\Auth;
 
-use App\Livewire\Forms\LoginForm;
-use Illuminate\Support\Facades\Session;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\Title;
+use App\Livewire\Forms\LoginForm;
+use Illuminate\Support\Facades\Session;
 
 class Login extends Component
 {
@@ -18,8 +19,24 @@ class Login extends Component
         $this->validate();
         $this->form->authenticate();
         Session::regenerate();
-        $this->dispatch('sukses-login');
-        $this->redirectIntended(default: route('user::dashboard', absolute: false), navigate: true);
+        switch (auth()->user()->role_id) {
+            case User::ROLE_USER:
+                $this->dispatch('sukses-login');
+                $this->redirect(route('user::dashboardUser', absolute: true), navigate: true);
+                break;
+            case User::ROLE_ADMIN:
+                $this->dispatch('sukses-login');
+                $this->redirect(route('admin::dashboardAdmin', absolute: true), navigate: true);
+                break;
+            case User::ROLE_WALSAN:
+                $this->dispatch('sukses-login');
+                $this->redirect(route('walsan::dashboardWalsan', absolute: true), navigate: true);
+                break;
+            default:
+                $this->dispatch('sukses-login');
+                $this->redirect(route('user::dashboardUser', absolute: true), navigate: true);
+                break;
+        }
     }
 
     public function isFormFilled()

@@ -78,9 +78,9 @@ class Register extends Component
                     'password' => Hash::make($this->password),
                     'phone' => $this->formatNumberIndo($this->phone),
                     'gender' => $this->gender,
-                    'isSantri' => $this->isSantri,
+                    'isSantri' => $this->isSantri == true ? 1 : 0,
                     'photo' => $filePath,
-                    'role_id' => $this->isSantri ? User::ROLE_WALSAN : User::ROLE_USER,
+                    'role_id' => $this->isSantri == true ? User::ROLE_WALSAN : User::ROLE_USER,
                 ]);
 
                 // Event Pendaftaran dan Login
@@ -90,7 +90,7 @@ class Register extends Component
 
             // Dispatch Event Sukses dan Redirect
             $this->dispatch('sukses-register');
-            $this->redirectIntended(default: route('user::dashboard', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('user::dashboardUser'), navigate: true);
         } catch (\Exception $e) {
             $this->dispatch('gagal-register');
         }
