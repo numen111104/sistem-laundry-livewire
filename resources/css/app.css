@@ -1,3 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "../vendors/css/vendors.main.css";
+@import "./bootstrap.min.css";
+@import "./bootstrap-extended.min.css";
+@import "./colors.min.css";
+@import "./components.min.css";
+@import "./themes/dark-layout.min.css";
+@import "./themes/bordered-layout.min.css";
+@import "./themes/semi-dark-layout.min.css";
+@import "./core/menu/menu-types/vertical-menu.min.css";
+@import "./plugins/forms/form-validation.css";
+@import "./pages/authentication.css";
+@import "./style.css";

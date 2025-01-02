@@ -1,0 +1,256 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+body {
+    font-family: "Poppins", serif !important;
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.blink_me {
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    85% {
+        opacity: 0;
+    }
+}
+
+.scroller {
+    overflow: auto;
+    padding-right: 3px;
+    height: 280px;
+}
+
+.scroller2 {
+    overflow: auto;
+    padding-right: 3px;
+    height: 110px;
+}
+
+.scroller3 {
+    overflow: auto;
+    padding-right: 3px;
+    height: 400px;
+}
+
+.scroller4 {
+    overflow: auto;
+    padding-right: 3px;
+    height: 300px;
+}
+
+.scroller5 {
+    overflow: auto;
+    padding-right: 3px;
+    height: 450px;
+}
+
+.scroller8 {
+    overflow: auto;
+    padding-right: 3px;
+    height: 500px;
+}
+
+.scroller6 {
+    overflow: auto;
+    padding-right: 3px;
+    height: 400px;
+}
+
+.scroller7 {
+    overflow: auto;
+    padding-right: 3px;
+    height: 700px;
+}
+
+.scroller-vertical-classic {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1277bf;
+    border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #25a8e0;
+}
+
+@keyframes dot-elastic {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.deskripsi-pencapaian {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.dots-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background-color: #25a8e0;
+    border-radius: 50%;
+    animation: dot-elastic 1s infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.overflow-x-shadow {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    width: 96%;
+    background: linear-gradient(to right, #fff 25%, rgba(255, 255, 255, 0)) 0 0
+            no-repeat,
+        linear-gradient(to left, #fff 25%, rgba(255, 255, 255, 0)) 100% 0
+            no-repeat,
+        radial-gradient(
+                farthest-side at 0 50%,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0)
+            )
+            0 0 no-repeat,
+        radial-gradient(
+                farthest-side at 100% 50%,
+                rgba(0, 0, 0, 0.2),
+                rgba(0, 0, 0, 0)
+            )
+            100% 0 no-repeat;
+    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-attachment: local, local, scroll, scroll;
+}
+
+.scroller-x {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.canvas-detail-title {
+    /* width: calc(100% - 26rem); */
+    min-height: 1rem;
+    font-weight: 600;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+}
+
+.title-1-line {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+}
+
+.p-ellipsis-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.p-ellipsis-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.p-ellipsis-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.p-ellipsis-4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.p-ellipsis-5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
