@@ -12,7 +12,7 @@ new class extends Component {
         $logout();
 
         $this->dispatch('sukses-logout');
-        $this->redirect('/login', navigate: true);
+        $this->redirect(route('login', absolute: true), navigate: true);
     }
 }; ?>
 
