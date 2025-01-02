@@ -20,10 +20,24 @@
 
 <body class="vertical-layout vertical-menu-modern navbar-floating footer-static menu-collapsed" data-open="click"
     data-menu="vertical-menu-modern" data-col="">
+    @php
+        $roleHeaders = match (Auth::user()->role_id) {
+            \App\Models\User::ROLE_ADMIN => 'layouts.headers.header-admin',
+            \App\Models\User::ROLE_USER => 'layouts.headers.header-user',
+            \App\Models\User::ROLE_WALSAN => 'layouts.headers.header-walsan',
+            default => 'layouts.headers.header-component',
+        };
+        $roleSidebars = match (Auth::user()->role_id) {
+            \App\Models\User::ROLE_ADMIN => 'layouts.sidebars.sidebar-admin',
+            \App\Models\User::ROLE_USER => 'layouts.sidebars.sidebar-user',
+            \App\Models\User::ROLE_WALSAN => 'layouts.sidebars.sidebar-walsan',
+            default => 'layouts.sidebars.sidebar-component',
+        };
+    @endphp
     {{-- HEADERS --}}
-    @include('layouts.headers.headers-component')
+    @include($roleHeaders)
     {{-- SIDEBAR --}}
-    @include('layouts.sidebars.sidebar-component')
+    @include($roleSidebars)
     {{-- BOTTOM NAV
     @include('layouts.bottom-navs.bottom-nav-component') --}}
     <button class="btn btn-primary btn-icon scroll-top waves-effect waves-float waves-light" type="button"
