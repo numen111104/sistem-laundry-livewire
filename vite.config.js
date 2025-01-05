@@ -8,4 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        outDir: "public/build",
+        assetsDir: "assets",
+        sourcemap: true, // Jika ingin melihat source map untuk debugging
+    },
 });
