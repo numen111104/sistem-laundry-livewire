@@ -60,23 +60,6 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class, 'role_id', 'id');
     }
 
-    // Relasi one-to-many dengan model LaundryOrder
-    public function laundryOrders()
-    {
-        return $this->hasMany(LaundryOrder::class, 'user_id', 'id');
-    }
-
-    // Relasi one-to-many dengan model DeliveryAddress
-    public function deliveryAddresses()
-    {
-        return $this->hasMany(DeliveryAddress::class, 'user_id', 'id');
-    }
-
-    // Relasi one-to-many dengan model MonthlyPackage
-    public function monthlyPackages()
-    {
-        return $this->hasMany(MonthlyPackage::class, 'user_id', 'id');
-    }
 
     // Relasi one-to-many dengan model Notification
     public function notifications()
@@ -84,9 +67,15 @@ class User extends Authenticatable
         return $this->hasMany(Notification::class, 'user_id', 'id');
     }
 
-    // Relasi one-to-many dengan model Payment
-    public function payments()
+    // Relasi one-to-many dengan model Laundry
+    public function laundry()
     {
-        return $this->hasMany(Payment::class, 'user_id', 'id');
+        return $this->hasMany(Laundry::class, 'user_id', 'id');
+    }
+
+    // Relasi one-to-many dengan model PembayaranBulanan
+    public function pembayaran_bulanan()
+    {
+        return $this->hasMany(PembayaranBulanan::class, 'user_id', 'id');
     }
 }
