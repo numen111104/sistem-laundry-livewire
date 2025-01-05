@@ -85,6 +85,7 @@ div.sticky {
 /* width */
 ::-webkit-scrollbar {
     width: 3px;
+    height: 3px;
 }
 
 /* Track */
@@ -95,13 +96,13 @@ div.sticky {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #1277bf;
+    background: #6610f2;
     border-radius: 3px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #25a8e0;
+    background: #7367f0;
 }
 
 @keyframes dot-elastic {

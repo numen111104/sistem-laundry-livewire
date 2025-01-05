@@ -1,4 +1,4 @@
-@import "../vendors/css/vendors.main.css";
+@import "./vendors.min.css";
 @import "./bootstrap.min.css";
 @import "./bootstrap-extended.min.css";
 @import "./colors.min.css";
@@ -7,6 +7,6 @@
 @import "./themes/bordered-layout.min.css";
 @import "./themes/semi-dark-layout.min.css";
 @import "./core/menu/menu-types/vertical-menu.min.css";
-@import "./plugins/forms/form-validation.css";
-@import "./pages/authentication.css";
+@import "./form-validation.min.css";
+@import "./pages/authentication.min.css";
 @import "./style.css";
