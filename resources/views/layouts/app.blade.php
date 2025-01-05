@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="loading" lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-textdirection="ltr">
+<html class="loading {{ auth()->user()->theme }}" lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+    data-textdirection="ltr" data-layout="{{ auth()->user()->theme }}">
 
 <head>
     <meta charset="utf-8">
@@ -35,7 +36,8 @@
         };
     @endphp
     {{-- HEADERS --}}
-    @include($roleHeaders)
+    {{-- @livewire($roleHeaders) --}}
+    <livewire:layouts.headers.header-admin />
     {{-- SIDEBAR --}}
     @include($roleSidebars)
     {{-- BOTTOM NAV
@@ -66,13 +68,13 @@
     {{-- SCRIPT --}}
     <script src="{{ asset('js/vendors/vendors.min.js') }}" data-navigate-once></script>
     @stack('vendorScript')
-    <script src="{{ asset('js/core/app-menu.min.js') }}" data-navigate-once></script>
-    <script src="{{ asset('js/core/app.min.js') }}" data-navigate-once></script>
+    <script src="{{ asset('js/core/app-menu.js') }}" data-navigate-once></script>
+    <script src="{{ asset('js/core/app.js') }}" data-navigate-once></script>
     @stack('pageScript')
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/duration.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/customParseFormat.js"></script>
-    <script>
+    <script data-navigate-once="">
         dayjs.extend(window.dayjs_plugin_duration)
         dayjs.extend(window.dayjs_plugin_customParseFormat)
         document.addEventListener('livewire:navigated', () => {

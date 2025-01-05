@@ -4,7 +4,7 @@
         <ul class="flex-row nav navbar-nav">
             <li class="nav-item me-auto">
                 <a class="navbar-brand" href="/">
-                    <img src="{{ Vite::logo('logo.png') }}" width="40" height="30">
+                    <img src="{{ Vite::logo('logo.png') }}" height="38">
                     <h4 class="brand-text">LM</h4>
                 </a>
             </li>
@@ -20,7 +20,8 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
             style="font-family: Poppins, serif">
             <li class="nav-item active">
-                <a class="d-flex align-items-center" href="#"><i data-feather="home"></i>
+                <a class="d-flex align-items-center" wire:navigate href="{{ route('admin::dashboardAdmin') }}"><i
+                        data-feather="home"></i>
                     <span class="menu-title text-truncate">Dashboard</span>
                 </a>
             </li>

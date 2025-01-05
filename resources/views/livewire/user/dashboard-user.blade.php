@@ -1,11 +1,9 @@
 @push('vendorCss')
-    <link data-navigate-once rel="stylesheet" type="text/css"
-        href="{{ Vite::asset('resources/vendors/css/extensions/toastr.min.css') }}">
+    <link data-navigate-once rel="stylesheet" type="text/css" href="{{ vendorCss('toastr.min.css') }}">
 @endpush
 
 @push('pageCss')
-    <link data-navigate-once rel="stylesheet" type="text/css"
-        href="{{ Vite::asset('resources/css/plugins/extensions/ext-component-toastr.css') }}">
+    <link data-navigate-once rel="stylesheet" type="text/css" href="{{ pluginCss('ext-component-toastr.min.css') }}">
 @endpush
 
 <div>
@@ -13,11 +11,11 @@
 </div>
 
 @push('vendorScript')
-    <script data-navigate-once src="{{ asset('js/vendors/extensions/toastr.min.js') }}"></script>
+    <script data-navigate-once src="{{ vendorJs('toastr.min.js') }}"></script>
 @endpush
 
 @push('pageScript')
-    <script data-navigate-once src="{{ asset('js/scripts/extensions/ext-component-toastr.js') }}"></script>
+    <script data-navigate-once src="{{ pluginJs('ext-component-toastr.min.js') }}"></script>
     <script data-navigate-once>
         window.addEventListener('sukses-login', function() {
             'use strict';
