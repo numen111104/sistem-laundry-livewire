@@ -15,8 +15,8 @@
             <div class="mb-1 mb-lg-0 mb-xl-1 card mt-lg-1 mt-xl-0">
                 <div class="card-header">
                     <div>
-                        <p class="mb-0 card-text">Today Orders</p>
-                        <h2 class="text-info fw-bolder">10</h2>
+                        <p class="mb-0 card-text">Laundry Proses</p>
+                        <h2 class="text-info fw-bolder">{{ $this->laundryProses() }}</h2>
                     </div>
                     <div class="m-0 avatar bg-light-info p-50">
                         <div class="avatar-content">
@@ -31,8 +31,8 @@
             <div class="mb-1 mb-lg-0 mb-xl-1 card mt-lg-1 mt-xl-0">
                 <div class="card-header">
                     <div>
-                        <p class="mb-0 card-text">Weekly Orders</p>
-                        <h2 class="text-primary fw-bolder">90</h2>
+                        <p class="mb-0 card-text">Laundry Selesai</p>
+                        <h2 class="text-primary fw-bolder">{{ $this->laundrySelesai() }}</h2>
                     </div>
                     <div class="m-0 avatar bg-light-primary p-50">
                         <div class="avatar-content">
@@ -47,8 +47,8 @@
             <div class="mb-1 mb-lg-0 mb-xl-1 card mt-lg-1 mt-xl-0">
                 <div class="card-header">
                     <div>
-                        <p class="mb-0 card-text">Monthly Orders</p>
-                        <h2 class="text-success fw-bolder">789</h2>
+                        <p class="mb-0 card-text">Laundry Diambil</p>
+                        <h2 class="text-success fw-bolder">{{ $this->laundryDiambil() }}</h2>
                     </div>
                     <div class="m-0 avatar bg-light-success p-50">
                         <div class="avatar-content">
@@ -62,8 +62,8 @@
             <div class="mb-1 mb-lg-0 mb-xl-1 card mt-lg-1 mt-xl-0">
                 <div class="card-header">
                     <div>
-                        <p class="mb-0 card-text">Total Revenue</p>
-                        <h2 class="text-warning fw-bolder">Rp800k</h2>
+                        <p class="mb-0 card-text">Total Pendapatan</p>
+                        <h2 class="text-warning fw-bolder">{{ $this->totalRevenue() }}</h2>
                     </div>
                     <div class="m-0 avatar bg-light-warning p-50">
                         <div class="avatar-content">
@@ -79,7 +79,7 @@
         <div class="col-lg-8 col-12">
             <div class="card card-company-table">
                 <div class="card-header">
-                    <h4 class="card-title">Latest Order</h4>
+                    <h4 class="card-title">Laundry Terbaru</h4>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -153,7 +153,7 @@
         <div class="col-lg-4 col-12">
             <div class="card card-statistics">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics</h4>
+                    <h4 class="card-title">Statistik</h4>
                     <div class="d-flex align-items-center">
                         <p class="card-text font-small-2 me-25 mb-0">Updated 1 month ago</p>
                     </div>
@@ -162,24 +162,15 @@
                     <div class="row">
                         <div class="col-12 col-lg-6 mb-2 mb-sm-0">
                             <div class="d-flex flex-row">
-                                <div class="avatar bg-light-danger me-2">
+                                <div class="avatar bg-light-info me-2">
                                     <div class="avatar-content">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-box avatar-icon">
-                                            <path
-                                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                            </path>
-                                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                            <line x1="12" y1="22.08" x2="12" y2="12">
-                                            </line>
-                                        </svg>
+                                        <span><i data-feather="user-plus"
+                                                class="feather feather-user-plus font-medium-5"></i></span>
                                     </div>
                                 </div>
                                 <div class="my-auto">
-                                    <h4 class="fw-bolder mb-0">1.423k</h4>
-                                    <p class="card-text font-small-3 mb-0">Products</p>
+                                    <h4 class="fw-bolder mb-0">{{ $totalLangganan }}</h4>
+                                    <p class="card-text font-small-3 mb-0">Bulanan</p>
                                 </div>
                             </div>
                         </div>
@@ -187,19 +178,13 @@
                             <div class="d-flex flex-row">
                                 <div class="avatar bg-light-success me-2">
                                     <div class="avatar-content">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-dollar-sign avatar-icon">
-                                            <line x1="12" y1="1" x2="12" y2="23">
-                                            </line>
-                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                        </svg>
+                                        <span><i data-feather="user-x"
+                                                class="feather feather-user-x font-medium-5"></i></span>
                                     </div>
                                 </div>
                                 <div class="my-auto">
-                                    <h4 class="fw-bolder mb-0">$9745</h4>
-                                    <p class="card-text font-small-3 mb-0">Revenue</p>
+                                    <h4 class="fw-bolder mb-0">{{ $totalBiasa }}</h4>
+                                    <p class="card-text font-small-3 mb-0">Biasa</p>
                                 </div>
                             </div>
                         </div>

@@ -25,7 +25,7 @@
                     <span class="menu-title text-truncate">Dashboard</span>
                 </a>
             </li>
-            <!--Adab dan Ibadah-->
+            {{-- <!--Adab dan Ibadah-->
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Adab dan Ibadah Santri</span><i
                     data-feather="more-horizontal"></i>
             </li>
@@ -55,7 +55,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>
